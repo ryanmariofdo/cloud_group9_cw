@@ -1,0 +1,32 @@
+POST /api/salaries/
+  # No login required (anonymous)
+  Request:
+    {
+      "company_name": "WSO2",
+      "role_title": "Software Engineer",
+      "experience_level": "Junior",          # Intern|Junior|Mid|Senior|Lead|Architect|Principal
+      "country": "Sri Lanka",               # optional, defaults to "Sri Lanka"
+      "base_salary": 150000.00,
+      "currency": "LKR",                    # optional, defaults to "LKR"
+      "anonymize": false                     # optional, defaults to false
+    }
+  Response (201):
+    {
+      "id": "uuid",
+      "company_name": "WSO2",
+      "role_title": "Software Engineer",
+      "experience_level": "Junior",
+      "country": "Sri Lanka",
+      "base_salary": 150000.00,
+      "currency": "LKR",
+      "anonymize": false,
+      "status": "PENDING",
+      "submitted_at": "2026-03-06T10:30:00"
+    }
+
+GET /api/salaries/{submission_id}
+  Response (200): same as above
+  Response (404): { "detail": "Submission not found" }
+
+GET /health
+  Response (200): { "status": "healthy" }
