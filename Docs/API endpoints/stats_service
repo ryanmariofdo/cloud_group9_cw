@@ -1,0 +1,14 @@
+GET /api/stats?country=Sri Lanka&role_title=Software Engineer&experience_level=Senior
+  # All query parameters are optional
+  # Only calculates from APPROVED submissions
+  Response (200):
+    {
+      "average": 350000.00,
+      "median": 325000.00,
+      "min": 150000.00,
+      "max": 550000.00,
+      "count": 12
+    }
+
+GET /health
+  Response (200): { "status": "healthy" }
