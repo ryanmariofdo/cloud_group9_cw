@@ -1,0 +1,23 @@
+POST /api/votes/
+  # Login required — JWT token in header
+  Headers: Authorization: Bearer <token>
+  Request:
+    {
+      "submission_id": "uuid",
+      "vote_type": "up"                     # "up" or "down"
+    }
+  Response (201):
+    {
+      "vote_id": "uuid",
+      "submission_id": "uuid",
+      "upvotes": 3,
+      "downvotes": 1,
+      "status": "PENDING"                   # or "APPROVED" if upvotes hit 5
+    }
+  Response (400):
+    { "detail": "Already voted on this submission" }
+  Response (401):
+    { "detail": "Not authenticated" }
+
+GET /health
+  Response (200): { "status": "healthy" }
