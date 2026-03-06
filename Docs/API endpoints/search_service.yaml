@@ -1,0 +1,24 @@
+GET /api/search?country=Sri Lanka&role_title=Software Engineer&experience_level=Senior&company_name=WSO2
+  # All query parameters are optional
+  # Only returns APPROVED submissions
+  # If anonymize=true on a record, hide/generalize company_name
+  Response (200):
+    {
+      "results": [
+        {
+          "id": "uuid",
+          "company_name": "WSO2",           # hidden if anonymize=true
+          "role_title": "Software Engineer",
+          "experience_level": "Senior",
+          "country": "Sri Lanka",
+          "base_salary": 450000.00,
+          "currency": "LKR",
+          "upvotes": 7,
+          "downvotes": 1
+        }
+      ],
+      "total": 1
+    }
+
+GET /health
+  Response (200): { "status": "healthy" }
