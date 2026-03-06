@@ -1,0 +1,28 @@
+POST /api/auth/signup
+  Request:
+    {
+      "email": "user@example.com",
+      "password": "securepassword"
+    }
+  Response (201):
+    {
+      "user_id": "uuid",
+      "token": "jwt-token-string"
+    }
+
+POST /api/auth/login
+  Request:
+    {
+      "email": "user@example.com",
+      "password": "securepassword"
+    }
+  Response (200):
+    {
+      "user_id": "uuid",
+      "token": "jwt-token-string"
+    }
+  Response (401):
+    { "detail": "Invalid email or password" }
+
+GET /health
+  Response (200): { "status": "healthy" }
