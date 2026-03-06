@@ -1,0 +1,10 @@
+# BFF is the single entry point. Frontend ONLY talks to BFF.
+# BFF forwards requests to the correct backend service.
+
+POST /bff/salaries/             → forwards to Salary Submission Service
+GET  /bff/salaries/{id}         → forwards to Salary Submission Service
+POST /bff/auth/signup           → forwards to Identity Service
+POST /bff/auth/login            → forwards to Identity Service
+POST /bff/votes/                → checks JWT, then forwards to Vote Service
+GET  /bff/search                → forwards to Search Service
+GET  /bff/stats                 → forwards to Stats Service
